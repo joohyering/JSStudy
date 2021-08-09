@@ -32,11 +32,17 @@ function Func(){
     funcThis = this;
 }
 var o1 = Func();
+//일반 함수로 호출
 if(funcThis === window){
     document.write('window <br />');
 }
  
 var o2 = new Func();
+//생성자로 호출
 if(funcThis === o2){
     document.write('o2 <br />');
 }
+
+/*funcThis 안에 비교를 넣지 않는 이유 :
+생성이 완료되지 않은 시점에서 o2는 undefined이기 때문*/
+
